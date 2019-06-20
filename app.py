@@ -136,9 +136,9 @@ class TextWidget(Widget):
         w3.eth.waitForTransactionReceipt(tx_hash)
         print(tx_hash)
     def buttonClickedch(self):
-
-        self.text = self.ids["hash_box"].text
         self.ids.hash_box.text = self.text
+        self.text = self.ids["hash_box"].text
+        
         self.ids.label1.text = self.text
         temp = Mutisign.functions.checkhash(int((self.text), 16)).call()
         if(temp):
