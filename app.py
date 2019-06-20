@@ -113,8 +113,8 @@ class TextWidget(Widget):
 
         self.ids.address_box.text = self.text2
         self.ids.hash_box.text = self.text
-        self.text2 = self.ids["address_box"].text
-        self.text = self.ids["hash_box"].text
+        #self.text2 = self.ids["address_box"].text
+        #self.text = self.ids["hash_box"].text
         self.ids.label1.text = self.text
         self.ids.label2.text = self.text2
         tx_hash = Mutisign.functions.receiveHash(Web3.toChecksumAddress(self.text2),
@@ -126,8 +126,8 @@ class TextWidget(Widget):
 
         self.ids.address_box.text = self.text2
         self.ids.hash_box.text = self.text
-        self.text2 = self.ids["address_box"].text
-        self.text = self.ids["hash_box"].text
+        #self.text2 = self.ids["address_box"].text
+        #self.text = self.ids["hash_box"].text
         self.ids.label1.text = self.text
         self.ids.label2.text = self.text2
         tx_hash = Mutisign.functions.receiveHash(Web3.toChecksumAddress(self.text2),
