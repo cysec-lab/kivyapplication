@@ -126,7 +126,7 @@ class TextWidget(Widget):
             print(tx_hash)
         except:
             self.ids.label1.text = "upload error"
-            self.ids.label2.text = "please check the address or hash is valid"
+            self.ids.label2.text = "please input again"
         finally:
             pass
     def buttonClicked1(self):
@@ -147,7 +147,7 @@ class TextWidget(Widget):
             print(tx_hash)
         except:
             self.ids.label1.text = "sign error"
-            self.ids.label2.text = "please check the address or hash is valid"
+            self.ids.label2.text = "please input again"
         finally:
             pass
     def buttonClickedch(self):
@@ -162,7 +162,7 @@ class TextWidget(Widget):
                 self.ids.label2.text = 'this file is false'
         except:
             self.ids.label1.text = "hash error"
-            self.ids.label2.text = "please check the hash is valid"
+            self.ids.label2.text = "please input again"
         finally:
             pass
 
