@@ -1,0 +1,82 @@
+<TextWidget>:
+    BoxLayout:
+        orientation: 'vertical'
+        size: root.size
+        Label:
+            id: label1
+            font_size: 34
+            size_hint:1,0.3
+            text: root.text
+
+        Label:
+            id: label2
+            font_size:34
+            size_hint:1,0.3
+            text:root.text2
+
+
+        GridLayout:
+            rows:2
+            cols:3
+            Label:
+                id:label3
+                font_size:34
+                text:"address"
+                size_hint_x:None
+                width:150
+            TextInput:
+                id: address_box
+                size_hint_y: 20
+                font_size: 34
+                focus: True
+                #on_text_validate: root.buttonClicked()
+            Button:
+                id: adressscan
+                size_hint: 0.2,0.2
+                text: "aS"
+                on_press:app.root.current="qrpage"
+            Label:
+                id:label4
+                font_size:34
+                text:"hash"
+                width:150
+                size_hint_x:None
+            TextInput:
+                id:hash_box
+                size_hint_y:20
+                font_size:34
+            Button:
+                id: hashscan
+                size_hint:0.2,0.2
+                text: "hS"
+                on_press:app.root.current="qrpage"
+        GridLayout:
+            rows:2
+            cols:2
+            Button:
+                id: button1
+                width:150
+                text: "upload"
+                font_size: 68
+                on_press: root.buttonClicked0()
+            Button:
+                id:button2
+                size_hint_y:20
+                text:"sign"
+                font_size:68
+                on_press:root.buttonClicked1()
+            Button:
+                id:button3
+                size_hint_y:20
+                width:150
+                text:"check"
+                font_size:68
+                on_press:root.buttonClickedch()
+
+            Button:
+                id:button4
+                size_hint_y:20
+                text:"exit"
+                font_size:68
+                on_press:app.stop()
+
