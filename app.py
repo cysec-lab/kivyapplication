@@ -80,8 +80,9 @@ w3 = Web3(Web3.HTTPProvider("http://74bf98d6.ngrok.io"))
 #w3.eth.defaultAccount = w3.eth.accounts[0]
 
 # Instantiate and deploy contract
-mutisign = w3.eth.contract(abi=[{'constant': False, 'inputs': [{'name': '_hash', 'type': 'uint256'}], 'name': 'checkhash', 'outputs': [{'name': '', 'type': 'bool'}], 'payable': False, 'stateMutability': 'nonpayable', 'type': 'function'}, {'constant': False, 'inputs': [{'name': '_from', 'type': 'address'}, {'name': '_hash', 'type': 'uint256'}, {'name': 'i', 'type': 'uint256'}], 'name': 'receiveHash', 'outputs': [{'name': '', 'type': 'bool'}], 'payable': False, 'stateMutability': 'nonpayable', 'type': 'function'}],
-                           bytecode='608060405234801561001057600080fd5b506102d0806100206000396000f30060806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063167747b814610051578063c7f47bae14610096575b600080fd5b34801561005d57600080fd5b5061007c60048036038101908080359060200190929190505050610105565b604051808215151515815260200191505060405180910390f35b3480156100a257600080fd5b506100eb600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291908035906020019092919050505061012e565b604051808215151515815260200191505060405180910390f35b600080600083815260200190815260200160002060009054906101000a900460ff169050919050565b6000808214156101be57600180600085815260200190815260200160002060006101000a81548160ff021916908315150217905550836002600085815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506001905061029d565b60018214801561022d57506002600084815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff1614155b1561029857600115156001600085815260200190815260200160002060009054906101000a900460ff161515141561029357600160008085815260200190815260200160002060006101000a81548160ff0219169083151502179055506001905061029d565b600080fd5b600080fd5b93925050505600a165627a7a72305820bd093e2688661cb415a3375458242c1a12b39784d8db5b89802997c4111b80d90029')
+mutisign = w3.eth.contract(abi=[{"constant": False,"inputs": [{"name": "_hash","type": "uint256"}],"name": "checkhash","outputs": [{"name": "","type": "bool"}],"payable": False,"stateMutability": "nonpayable","type": "function"},{"constant": False,"inputs": [{"name": "_from","type": "address"},{"name": "_hash","type": "uint256"}],"name": "delethash","outputs": [{"name": "","type": "bool"}],"payable": False,"stateMutability": "nonpayable","type": "function"},{"constant": False,"inputs": [{"name": "_from","type": "address"},{"name": "_hash","type": "uint256"}],"name": "receiveHash","outputs": [{"name": "","type": "bool"}],"payable": False,"stateMutability": "nonpayable","type": "function"}],
+bytecode="608060405234801561001057600080fd5b506104ac806100206000396000f300608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063167747b81461005c57806341e45a9b146100a1578063d2de320014610106575b600080fd5b34801561006857600080fd5b506100876004803603810190808035906020019092919050505061016b565b604051808215151515815260200191505060405180910390f35b3480156100ad57600080fd5b506100ec600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610194565b604051808215151515815260200191505060405180910390f35b34801561011257600080fd5b50610151600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610323565b604051808215151515815260200191505060405180910390f35b600080600083815260200190815260200160002060009054906101000a900460ff169050919050565b60006001151560008084815260200190815260200160002060009054906101000a900460ff161515141561031857600115156002600084815260200190815260200160002060009054906101000a900460ff1615151415156102775760016002600084815260200190815260200160002060006101000a81548160ff021916908315150217905550826004600084815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506001905061031d565b6004600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff1614151561031357600080600084815260200190815260200160002060006101000a81548160ff0219169083151502179055506001905061031d565b600080fd5b600190505b92915050565b6000600115156001600084815260200190815260200160002060009054906101000a900460ff1615151415156103d957600180600084815260200190815260200160002060006101000a81548160ff021916908315150217905550826003600084815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506001905061047a565b6003600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff1614151561047557600160008084815260200190815260200160002060006101000a81548160ff0219169083151502179055506001905061047a565b600080fd5b929150505600a165627a7a7230582011fdd36893509808c46f3a26cff0ae5eef35d0f88c23be6a66a2c35ad393475c0029"
+)
 
 # Submit the transaction that deploys the contract
 #tx_hash = mutisign.constructor().transact()
@@ -92,8 +93,8 @@ mutisign = w3.eth.contract(abi=[{'constant': False, 'inputs': [{'name': '_hash',
 
 
 Mutisign = w3.eth.contract(
-    address='0x9cf4DED3BfeE72c2Ca6FA5C5e6de7c22aAb25535',
-    abi=[{'constant': False, 'inputs': [{'name': '_hash', 'type': 'uint256'}], 'name': 'checkhash', 'outputs': [{'name': '', 'type': 'bool'}], 'payable': False, 'stateMutability': 'nonpayable', 'type': 'function'}, {'constant': False, 'inputs': [{'name': '_from', 'type': 'address'}, {'name': '_hash', 'type': 'uint256'}, {'name': 'i', 'type': 'uint256'}], 'name': 'receiveHash', 'outputs': [{'name': '', 'type': 'bool'}], 'payable': False, 'stateMutability': 'nonpayable', 'type': 'function'}],
+    address='0x52067072667552E9EC584A538bd0EE42AF3fda8D',
+    abi=[{"constant": False,"inputs": [{"name": "_hash","type": "uint256"}],"name": "checkhash","outputs": [{"name": "","type": "bool"}],"payable": False,"stateMutability": "nonpayable","type": "function"},{"constant": False,"inputs": [{"name": "_from","type": "address"},{"name": "_hash","type": "uint256"}],"name": "delethash","outputs": [{"name": "","type": "bool"}],"payable": False,"stateMutability": "nonpayable","type": "function"},{"constant": False,"inputs": [{"name": "_from","type": "address"},{"name": "_hash","type": "uint256"}],"name": "receiveHash","outputs": [{"name": "","type": "bool"}],"payable": False,"stateMutability": "nonpayable","type": "function"}]
 )
 
 
@@ -107,29 +108,9 @@ class TextWidget(Widget):
 
     def __init__(self, **kwargs):
         super(TextWidget, self).__init__(**kwargs)
+
     def buttonClicked0(self):
         #self.text =  self.ids["address_box"].text
-
-        self.ids.address_box.text = self.text2
-        self.ids.hash_box.text = self.text
-        #self.text2 = self.ids["address_box"].text
-        #self.text = self.ids["hash_box"].text
-        self.ids.label1.text = "upload is done!"
-        self.ids.label2.text = ""
-        #self.ids.label2.text = self.text2
-        try:
-            w3.eth.defaultAccount = Web3.toChecksumAddress(self.text2)
-            tx_hash = Mutisign.functions.receiveHash(Web3.toChecksumAddress(self.text2),
-                                                 int((self.text), 16),
-                                                 0).transact()
-            w3.eth.waitForTransactionReceipt(tx_hash)
-            print(tx_hash)
-        except:
-            self.ids.label1.text = "upload error"
-            self.ids.label2.text = "please input again"
-        finally:
-            pass
-    def buttonClicked1(self):
 
         self.ids.address_box.text = self.text2
         self.ids.hash_box.text = self.text
@@ -141,12 +122,41 @@ class TextWidget(Widget):
         try:
             w3.eth.defaultAccount = Web3.toChecksumAddress(self.text2)
             tx_hash = Mutisign.functions.receiveHash(Web3.toChecksumAddress(self.text2),
-                                                 int((self.text), 16),
-                                                 1).transact()
+                                                 int((self.text), 16)).transact()
             w3.eth.waitForTransactionReceipt(tx_hash)
             print(tx_hash)
+            t = Mutisign.functions.checkhash(int((self.text), 16)).call()
+            if(t):
+                self.ids.label2.text = "file is true!"
+            else:
+                self.ids.label2.text = "wait for confirm!"
         except:
             self.ids.label1.text = "sign error"
+            self.ids.label2.text = "please input again"
+        finally:
+            pass
+
+    def buttonClicked1(self):
+        self.ids.address_box.text = self.text2
+        self.ids.hash_box.text = self.text
+        #self.text2 = self.ids["address_box"].text
+        #self.text = self.ids["hash_box"].text
+        self.ids.label1.text = "delete is done!"
+        self.ids.label2.text = ""
+        #self.ids.label2.text = self.text2
+        try:
+            w3.eth.defaultAccount = Web3.toChecksumAddress(self.text2)
+            tx_hash = Mutisign.functions.delethash(Web3.toChecksumAddress(self.text2),
+                                                 int((self.text), 16)).transact()
+            w3.eth.waitForTransactionReceipt(tx_hash)
+            print(tx_hash)
+            t = Mutisign.functions.checkhash(int((self.text),16)).call()
+            if(t):
+                self.ids.label2.text = "wait for delete"
+            else:
+                self.ids.label2.text = "unconfirm success"
+        except:
+            self.ids.label1.text = "delete error"
             self.ids.label2.text = "please input again"
         finally:
             pass
@@ -333,6 +343,7 @@ class TestApp(App):
         screen = Screen(name="qrpage")
         screen.add_widget(self.camera_page)
         self.screen_manager.add_widget(screen)
+
 
         return self.screen_manager
 
