@@ -39,30 +39,49 @@ from kivy.utils import get_color_from_hex
 #  contract multisign{
 #      mapping(uint256=>bool)private comfirmed ;
 #      mapping(uint256=>bool)private register ;
+#      mapping(uint256=>bool)private register2;
 #      mapping(uint256=>address)private uploadadd;
-#      function receiveHash(address _from,uint256 _hash ,uint i)returns(bool){ //i=0,want to be checked.    i = 1,want to be comfirmed
-#          if(i==0)
+#      mapping(uint256=>address)private deletadd;
+#      function receiveHash(address _from,uint256 _hash)returns(bool){
+#          if(register[_hash] != true)
 #          {
-#              register[_hash] = true;
-#              uploadadd[_hash] = _from;
-#              return true;
+#             register[_hash] = true;
+#             uploadadd[_hash] = _from;
+#             return true;
 #          }
-#          else if(i==1&&(_from != uploadadd[_hash]))
+#          else if(_from != uploadadd[_hash])
 #          {
-#              if( register[_hash] == true)
-#              {
-#                  comfirmed[_hash] = true;
-#                  return true;
-#              }
-#              else
-#                  revert();
+#             comfirmed[_hash] = true;
+#             return true;
 #          }
 #          else
-#              revert();
+#             revert();
+#
 #      }
 #     function checkhash(uint256 _hash)returns(bool)
 #     {
 #         return comfirmed[_hash];
+#     }
+#     function delethash(address _from,uint256 _hash)returns(bool)
+#     {
+#         if(comfirmed[_hash]==true)
+#         {
+#             if(register2[_hash]!=true)
+#             {
+#                 register2[_hash] = true;
+#                 deletadd[_hash] = _from;
+#                 return true;
+#             }
+#             else if(_from != deletadd[_hash])
+#             {
+#                 comfirmed[_hash] = false ;
+#                 return true;
+#             }
+#             else
+#                 revert();
+#         }
+#         else
+#             return true;
 #     }
 #  }
 # '''
